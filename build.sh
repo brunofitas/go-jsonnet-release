@@ -2,19 +2,17 @@
 
 package=$1
 if [[ -z "$package" ]]; then
-  echo "usage: $0 <package-name>"
-  exit 1
+    echo "usage: $0 <package-name>"
+    exit 1
 fi
 package_split=(${package//\// })
 package_name=${package_split[-1]}
 
 platforms=("windows/amd64" "darwin/amd64" "linux/amd64")
-#platforms=("darwin/amd64" "linux/amd64")
 
 #cd go-jsonnet
 
-for platform in "${platforms[@]}"
-do
+for platform in "${platforms[@]}"; do
     platform_split=(${platform//\// })
     GOOS=${platform_split[0]}
     GOARCH=${platform_split[1]}
