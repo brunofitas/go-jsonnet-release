@@ -24,12 +24,5 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: ls
       - run: git submodule init
-      - run: |-
-        cd go-jsonnet \
-        && env \
-          ORG_NAME=brunofitas \
-          REPO_NAME=go-jsonnet-release \
-          GOOS=linux \
-          GOARCH=amd64 \
-          go build ./cmd/jsonnet
+      - run: cd go-jsonnet && env ORG_NAME=brunofitas REPO_NAME=go-jsonnet-release GOOS=linux GOARCH=amd64 go build ./cmd/jsonnet
 
