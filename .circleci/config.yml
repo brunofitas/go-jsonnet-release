@@ -24,3 +24,4 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: ls
       - run: git submodule init
+      - run: bash build.sh ./go-jsonnet/cmd/jsonnet
